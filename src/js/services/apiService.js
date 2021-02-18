@@ -10,7 +10,7 @@ const fetchImage = async searchQuery => {
         page += 1;
         return fetch.data.hits;
     } catch {
-        () => error({
+        error({
             text: 'Something went wrong!',
             delay: 300,
         });

@@ -10,9 +10,9 @@ async function searchImage() {
         const imageList = await apiSevice.fetchImage(searchQuery);
         console.log(imageList)
         if (imageList.length === 0) {
-         () => error({
+        error({
             text: 'Incorrect request. Try again!',
-            delay: 300,
+            delay: 2000,
         });
             return
         };
@@ -21,7 +21,7 @@ async function searchImage() {
         markup.makeImageMarkup(imageList);
         observer(searchImage);
     } catch {
-        () => error({
+        error({
             text: 'Something went wrong!',
             delay: 300,
         });
